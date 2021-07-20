@@ -31,6 +31,18 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="Listasimple.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Listasimple.h" />
+		<Unit filename="Nodo.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Nodo.h" />
+		<Unit filename="TDA_PILA.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="TDA_PILA.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
