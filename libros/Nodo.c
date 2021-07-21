@@ -4,7 +4,7 @@
 nodo * Crearnodo(){
     nodo*nuevo;
     nuevo= (nodo*)malloc(sizeof(nodo));
-    nuevo->libro=NULL;
+    nuevo->libro;
     nuevo->siguiente=NULL;
     return nuevo;
 }

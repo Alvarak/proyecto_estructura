@@ -1,16 +1,16 @@
 #ifndef NODO_H_INCLUDED
 #define NODO_H_INCLUDED
 struct Libro{
-    char ISBN;
-    char titulo;
-    char edicion;
-    char idioma;
-    char year;
-    char editorial;
-    char autores;
+    char ISBN[20];
+    char titulo[50];
+    char edicion[20];
+    char idioma[20];
+    char year[4];
+    char editorial[30];
+    char autores[100];
 };
 struct nodo_tda{
-    struct Libro *libro;
+    struct Libro libro;
     struct nodo_tda*siguiente;
 };
 

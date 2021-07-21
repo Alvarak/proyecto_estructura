@@ -3,6 +3,9 @@
 #include"TDA_PILA.h"
 #include<string.h>
 
+void imprimir_libro(nodo *n){
+printf("%s\n",n->libro.ISBN);
+}
 int main()
 {
   menu();
@@ -45,5 +48,13 @@ void agregar_estanteria(){
 }
 
 void agregar_libro(){
+printf("Ingrese los datos del libro\n\n");
+pila_tda pila1=NULL;
+pila1=Crear_listasimple();
+nodo *nodonuevo;
+nodonuevo=Crearnodo();
+puts("ISBN:");
+scanf("%s",nodonuevo->libro.ISBN);
+imprimir_libro(nodonuevo);
 
 }
