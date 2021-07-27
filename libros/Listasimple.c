@@ -44,7 +44,7 @@ void Insertarnodo_listasimple (listasimple L, nodo *nuevo)
       nodo_actual=nodo_actual->siguiente;
     }
 
-    if(contador==0 && nodo_actual->libro.ISBN==NULL)//Primer elemento de la lista
+    if(contador==0 && nodo_actual->ptrlibro==NULL)//Primer elemento de la lista
     {
         L=nuevo;
       //L->libro=nuevo->libro;

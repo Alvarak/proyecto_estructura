@@ -7,10 +7,11 @@ struct Libro{
     char idioma[20];
     char year[4];
     char editorial[30];
-    char autores[100];
+
 };
 struct nodo_tda{
     struct Libro libro;
+    struct Libro *ptrlibro;
     struct nodo_tda*siguiente;
 };
 

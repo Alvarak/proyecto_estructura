@@ -1,20 +1,20 @@
 # depslib dependency file v1.0
-1626894351 source:c:\users\administrador\desktop\proyecto_estructura\libros\main.c
+1627418439 source:c:\users\administrador\desktop\proyecto_estructura\libros\main.c
 	<stdio.h>
 	<stdlib.h>
 	"TDA_PILA.h"
 	<string.h>
 
-1626894170 source:c:\users\administrador\desktop\proyecto_estructura\libros\listasimple.c
+1627417466 source:c:\users\administrador\desktop\proyecto_estructura\libros\listasimple.c
 	"Listasimple.h"
 	<stdlib.h>
 
 1626876090 c:\users\administrador\desktop\proyecto_estructura\libros\listasimple.h
 	"Nodo.h"
 
-1626894798 c:\users\administrador\desktop\proyecto_estructura\libros\nodo.h
+1627418536 c:\users\administrador\desktop\proyecto_estructura\libros\nodo.h
 
-1626890404 source:c:\users\administrador\desktop\proyecto_estructura\libros\nodo.c
+1627411520 source:c:\users\administrador\desktop\proyecto_estructura\libros\nodo.c
 	"Nodo.h"
 	<stdlib.h>
 

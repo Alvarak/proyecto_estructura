@@ -3,31 +3,35 @@
 #include"TDA_PILA.h"
 #include<string.h>
 
-void imprimir_libro(nodo *n){
-printf("%s\n",n->libro.ISBN);
-}
 int main()
 {
-  menu();
+  pila_tda tienda=NULL;
+  tienda=Crear_listasimple();
+  menu(tienda);
   return 0;
 }
 
-void menu()
+void menu(pila_tda p)
 {
+  verificaciones(p);
   do{
+
+  printf("Tienda de Libros\n\n");
+
+
+
     char opcion_menu;
     printf("Menu. Seleccione una opcion\n");
-    printf("1: Agregar estanteria\n");
-    printf("2: Agregar libro\n");
+    printf("1: Agregar libro\n");
+    printf("2: ");
     printf("3: Salir\n");
     printf("Su opcion es: ");
     scanf("%s",&opcion_menu);
     if(opcion_menu=='1'){
-      agregar_estanteria();
+      agregar_libro();
       break;
     }
     else if(opcion_menu=='2'){
-      agregar_libro();
       break;
     }
     else if(opcion_menu=='3'){
@@ -43,18 +47,22 @@ void menu()
   printf("saliendo del menu\n");
 }
 
-void agregar_estanteria(){
-
-}
-
 void agregar_libro(){
 printf("Ingrese los datos del libro\n\n");
-pila_tda pila1=NULL;
-pila1=Crear_listasimple();
 nodo *nodonuevo;
 nodonuevo=Crearnodo();
 puts("ISBN:");
 scanf("%s",nodonuevo->libro.ISBN);
 imprimir_libro(nodonuevo);
 
+
+}
+void imprimir_libro(nodo *n){
+printf("%s\n",n->libro.ISBN);
+}
+
+void verificaciones(pila_tda p){
+if(p->ptrlibro==NULL){
+    printf("No hay libros en este momento\n\n");
+}
 }
