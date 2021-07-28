@@ -7,19 +7,27 @@ struct Libro{
     char idioma[20];
     char year[4];
     char editorial[30];
-
 };
 struct nodo_tda{
     struct Libro libro;
     struct Libro *ptrlibro;
     struct nodo_tda*siguiente;
 };
+struct nodo_tda_autores{
+    struct nodo_tda *ptrnodo;
+    struct nodo_tda_autores *ptrautor;
+    char autor[50];
+    struct nodo_tda_autores*siguiente;
+};
 
 typedef struct nodo_tda nodo;
+
+typedef struct nodo_tda_autores autores;
 
 nodo* Crearnodo();
 
 void eliminarnodo(nodo*n);
 
+autores * Crearautores();
 
 #endif // NODO_H_INCLUDED

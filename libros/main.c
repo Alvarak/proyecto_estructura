@@ -13,22 +13,20 @@ int main()
 
 void menu(pila_tda p)
 {
-  verificaciones(p);
+
   do{
 
-  printf("Tienda de Libros\n\n");
-
-
-
+    printf("Tienda de Libros\n\n");
+    verificaciones(p);
     char opcion_menu;
-    printf("Menu. Seleccione una opcion\n");
+    printf("---Menu--- \n\nSeleccione una opcion\n");
     printf("1: Agregar libro\n");
-    printf("2: ");
+    printf("2: ------------\n");
     printf("3: Salir\n");
     printf("Su opcion es: ");
     scanf("%s",&opcion_menu);
     if(opcion_menu=='1'){
-      agregar_libro();
+      agregar_libro(p);
       break;
     }
     else if(opcion_menu=='2'){
@@ -47,22 +45,39 @@ void menu(pila_tda p)
   printf("saliendo del menu\n");
 }
 
-void agregar_libro(){
+void agregar_libro(pila_tda p){
 printf("Ingrese los datos del libro\n\n");
 nodo *nodonuevo;
 nodonuevo=Crearnodo();
+nodonuevo->ptrlibro=&nodonuevo->libro;
 puts("ISBN:");
 scanf("%s",nodonuevo->libro.ISBN);
-imprimir_libro(nodonuevo);
-
-
+puts("Titulo:");
+scanf("%s",nodonuevo->libro.titulo);
+puts("Edicion:");
+scanf("%s",nodonuevo->libro.edicion);
+puts("Idioma:");
+scanf("%s",nodonuevo->libro.idioma);
+puts("Year:");
+scanf("%s",nodonuevo->libro.year);
+puts("Editorial:");
+scanf("%s",nodonuevo->libro.editorial);
+push(nodonuevo,p);
+menu(p);
 }
 void imprimir_libro(nodo *n){
 printf("%s\n",n->libro.ISBN);
 }
 
 void verificaciones(pila_tda p){
+pila_tda temp;
+temp=p;
 if(p->ptrlibro==NULL){
     printf("No hay libros en este momento\n\n");
+}else{
+    while(temp->ptrlibro!=NULL){
+        imprimir_libro(temp);
+    }
+temp=temp->siguiente;
 }
 }
