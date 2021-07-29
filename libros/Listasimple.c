@@ -35,7 +35,7 @@ void Insertarnodo_listasimple (listasimple L, nodo *nuevo)
 {
     nodo *nodo_actual=NULL;
   int contador=0;
-  if(L!=NULL && nuevo!=NULL)
+  if(L->ptrlibro!=NULL && nuevo!=NULL)
   {
     nodo_actual=(nodo *)L;
     while(nodo_actual->siguiente !=NULL)
@@ -44,9 +44,9 @@ void Insertarnodo_listasimple (listasimple L, nodo *nuevo)
       nodo_actual=nodo_actual->siguiente;
     }
 
-    if(contador==0 && nodo_actual->ptrlibro==NULL)//Primer elemento de la lista
+    if(contador==0 && nodo_actual->siguiente==NULL)//Primer elemento de la lista
     {
-        L=nuevo;
+        L->siguiente=nuevo;
       //L->libro=nuevo->libro;
       //L->siguiente=nuevo->siguiente;
 
@@ -70,5 +70,9 @@ void Insertarnodo_listasimple (listasimple L, nodo *nuevo)
 
   }*/
 
+}else{
+    L->libro=nuevo->libro;
+    L->ptrlibro=nuevo->ptrlibro;
+    L->siguiente=nuevo->siguiente;
 }
 }

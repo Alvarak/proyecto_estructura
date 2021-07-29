@@ -13,7 +13,7 @@ int main()
 
 void menu(pila_tda p)
 {
-
+  system("cls");
   do{
 
     printf("Tienda de Libros\n\n");
@@ -63,6 +63,7 @@ scanf("%s",nodonuevo->libro.year);
 puts("Editorial:");
 scanf("%s",nodonuevo->libro.editorial);
 push(nodonuevo,p);
+system("pause");
 menu(p);
 }
 void imprimir_libro(nodo *n){
@@ -75,9 +76,9 @@ temp=p;
 if(p->ptrlibro==NULL){
     printf("No hay libros en este momento\n\n");
 }else{
-    while(temp->ptrlibro!=NULL){
+    do{
         imprimir_libro(temp);
-    }
-temp=temp->siguiente;
+        temp=temp->siguiente;
+    }while(temp!=NULL);
 }
 }
