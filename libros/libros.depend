@@ -1,27 +1,27 @@
 # depslib dependency file v1.0
-1627574078 source:c:\users\administrador\desktop\proyecto_estructura\libros\main.c
+1627680300 source:c:\users\administrador\desktop\proyecto_estructura\libros\main.c
 	<stdio.h>
 	<stdlib.h>
 	"TDA_PILA.h"
 	<string.h>
 
-1627574078 source:c:\users\administrador\desktop\proyecto_estructura\libros\listasimple.c
+1627588429 source:c:\users\administrador\desktop\proyecto_estructura\libros\listasimple.c
 	"Listasimple.h"
 	<stdlib.h>
 
-1626876090 c:\users\administrador\desktop\proyecto_estructura\libros\listasimple.h
+1627588429 c:\users\administrador\desktop\proyecto_estructura\libros\listasimple.h
 	"Nodo.h"
 
-1627572373 c:\users\administrador\desktop\proyecto_estructura\libros\nodo.h
+1627679658 c:\users\administrador\desktop\proyecto_estructura\libros\nodo.h
 
-1627572373 source:c:\users\administrador\desktop\proyecto_estructura\libros\nodo.c
+1627675376 source:c:\users\administrador\desktop\proyecto_estructura\libros\nodo.c
 	"Nodo.h"
 	<stdlib.h>
 
-1627569905 source:c:\users\administrador\desktop\proyecto_estructura\libros\tda_pila.c
+1627588429 source:c:\users\administrador\desktop\proyecto_estructura\libros\tda_pila.c
 	<stdio.h>
 	"TDA_PILA.h"
 
-1626876090 c:\users\administrador\desktop\proyecto_estructura\libros\tda_pila.h
+1627588429 c:\users\administrador\desktop\proyecto_estructura\libros\tda_pila.h
 	"Listasimple.h"
 
