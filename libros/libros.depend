@@ -45,7 +45,7 @@
 1627753259 d:\proyecto_estructura\libros\tda_pila.h
 	"Listasimple.h"
 
-1627891448 source:d:\proyecto_estructura\libros\main.c
+1627893439 source:d:\proyecto_estructura\libros\main.c
 	<stdio.h>
 	<stdlib.h>
 	"TDA_PILA.h"
