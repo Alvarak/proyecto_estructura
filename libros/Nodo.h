@@ -1,11 +1,11 @@
 #ifndef NODO_H_INCLUDED
 #define NODO_H_INCLUDED
 struct Libro{
-    char ISBN[9];
+    char ISBN[20];
     char titulo[50];
     char edicion[20];
     char idioma[20];
-    char year[4];
+    char year[20];
     char editorial[30];
 };
 struct nodo_tda{

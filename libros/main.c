@@ -58,17 +58,17 @@ nodo *nodonuevo;
 nodonuevo=Crearnodo();
 nodonuevo->ptrlibro=&nodonuevo->libro;
 printf("ISBN(Ingrese 9 digitos): ");
-comprobrar_tamano_string(nodonuevo->libro.ISBN,20,10,1);
+comprobrar_tamano_string(nodonuevo->libro.ISBN,20,9,1);
 printf("Titulo: ");
-comprobrar_tamano_string(nodonuevo->libro.titulo,60,51,2);
+comprobrar_tamano_string(nodonuevo->libro.titulo,60,50,2);
 printf("Edicion: ");
-comprobrar_tamano_string(nodonuevo->libro.edicion,30,21,3);
+comprobrar_tamano_string(nodonuevo->libro.edicion,30,20,3);
 printf("Idioma: ");
-comprobrar_tamano_string(nodonuevo->libro.idioma,30,51,4);
+comprobrar_tamano_string(nodonuevo->libro.idioma,30,50,4);
 printf("Year: ");
-comprobrar_tamano_string(nodonuevo->libro.year,10,5,5);
+comprobrar_tamano_string(nodonuevo->libro.year,10,4,5);
 printf("Editorial: ");
-comprobrar_tamano_string(nodonuevo->libro.editorial,40,31,6);
+comprobrar_tamano_string(nodonuevo->libro.editorial,40,30,6);
 push(nodonuevo,p);
 system("pause");
 menu(p);
@@ -101,6 +101,7 @@ void comprobrar_tamano_string(char *cadena, int espacio,int max,int tipomensaje)
     tipomensaje=tipomensaje;
     fflush(stdin);
     fgets(cadena,espacio,stdin);
+    strtok(cadena,"\n");
     int tamano=strlen(cadena);
     switch(tipomensaje){
     case 1:
