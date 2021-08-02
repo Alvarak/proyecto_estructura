@@ -16,30 +16,27 @@ int main()
 void menu(pila_tda p)
 {
   system("cls");
+  char opcion_menu;
   do{
 
     printf("Tienda de Libros\n\n");
     verificaciones(p);
-    int opcion_menu;
     printf("---Menu--- \n\nSeleccione una opcion\n");
     printf("1: Agregar libro\n");
     printf("2: ------------\n");
     printf("3: Salir\n");
     printf("Su opcion es: ");
-    scanf("%d",&opcion_menu);
-    if(len(opcion_menu)>1){
-        printf("Ingrese una opcion valida\n")
-        system("pause");
-        break;
-    }
-    else if(opcion_menu== 1){
+    fflush(stdin);
+    scanf("%s",&opcion_menu);
+    if(opcion_menu=='1'){
       agregar_libro(p);
       break;
     }
-    else if(opcion_menu== 2){
+
+    else if(opcion_menu== '2'){
       break;
     }
-    else if(opcion_menu== 3){
+    else if(opcion_menu== '3'){
       printf("Escogio salir\n");
       break;
     }
