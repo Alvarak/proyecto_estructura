@@ -52,24 +52,23 @@ void menu(pila_tda p)
 }
 
 void agregar_libro(pila_tda p){
+system("cls");
 printf("Ingrese los datos del libro\n");
 nodo *nodonuevo;
 nodonuevo=Crearnodo();
 nodonuevo->ptrlibro=&nodonuevo->libro;
-printf("ISBN: ");
-fgets(nodonuevo->libro.ISBN,10,stdin);
+printf("ISBN(Ingrese 9 digitos): ");
+comprobrar_tamano_string(nodonuevo->libro.ISBN,20,10,1);
 printf("Titulo: ");
-fgets(nodonuevo->libro.ISBN,50,stdin);
+comprobrar_tamano_string(nodonuevo->libro.titulo,60,51,2);
 printf("Edicion: ");
-gets(nodonuevo->libro.edicion);
+comprobrar_tamano_string(nodonuevo->libro.edicion,30,21,3);
 printf("Idioma: ");
-gets(nodonuevo->libro.idioma);
+comprobrar_tamano_string(nodonuevo->libro.idioma,30,51,4);
 printf("Year: ");
-gets(nodonuevo->libro.year);
+comprobrar_tamano_string(nodonuevo->libro.year,10,5,5);
 printf("Editorial: ");
-gets(nodonuevo->libro.editorial);
-printf("%s   %s   %s   %s   %s   %s\n",nodonuevo->libro.ISBN,nodonuevo->libro.titulo,nodonuevo->libro.edicion,nodonuevo->libro.idioma,nodonuevo->libro.year,nodonuevo->libro.editorial);
-system("pause");
+comprobrar_tamano_string(nodonuevo->libro.editorial,40,31,6);
 push(nodonuevo,p);
 system("pause");
 menu(p);
@@ -95,4 +94,68 @@ if(p->ptrlibro==NULL){
         temp=temp->siguiente;
     }while(temp!=NULL);
 }
+}
+void comprobrar_tamano_string(char *cadena, int espacio,int max,int tipomensaje){
+    int verificado=0;
+    do{
+    tipomensaje=tipomensaje;
+    fflush(stdin);
+    fgets(cadena,espacio,stdin);
+    int tamano=strlen(cadena);
+    switch(tipomensaje){
+    case 1:
+        if(tamano!=max){
+            printf("Error El ISBN debe tener %d digitos\nIntente de nuevo: ",max-1);
+            break;
+
+        }else{
+            verificado=1;
+            break;
+        }
+    case 2:
+        if(tamano>max){
+            printf("Error El Titulo debe tener menos de %d caracteres\nIntente de nuevo: ",max-1);
+            break;
+        }else{
+            verificado=1;
+            break;
+        }
+    case 3:
+        if(tamano>max){
+            printf("Error La Edicion debe tener menos de %d caracteres\nIntente de nuevo: ",max-1);
+            break;
+
+        }else{
+            verificado=1;
+            break;
+        }
+    case 4:
+        if(tamano>max){
+            printf("Error El Idioma debe tener menos de %d caracteres\nIntente de nuevo: ",max-1);
+            break;
+
+        }else{
+            verificado=1;
+            break;
+        }
+    case 5:
+        if(tamano>max){
+            printf("Error El Year debe tener menos de %d caracteres\nIntente de nuevo: ",max-1);
+            break;
+
+        }else{
+            verificado=1;
+            break;
+        }
+    case 6:
+        if(tamano>max){
+            printf("Error La Editorial debe tener menos de %d caracteres\nIntente de nuevo: ",max-1);
+            break;
+
+        }else{
+            verificado=1;
+            break;
+        }
+    }
+    }while(verificado!=1);
 }

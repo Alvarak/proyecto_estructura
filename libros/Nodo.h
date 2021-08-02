@@ -1,7 +1,7 @@
 #ifndef NODO_H_INCLUDED
 #define NODO_H_INCLUDED
 struct Libro{
-    char ISBN[11];
+    char ISBN[9];
     char titulo[50];
     char edicion[20];
     char idioma[20];
