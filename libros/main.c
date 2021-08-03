@@ -69,6 +69,12 @@ printf("Year: ");
 comprobrar_tamano_string(nodonuevo->libro.year,10,4,5);
 printf("Editorial: ");
 comprobrar_tamano_string(nodonuevo->libro.editorial,40,30,6);
+char resp;
+while(resp!='y'){
+    autores *autornuevo;
+    autornuevo=Crearautores();
+    comprobrar_tamano_string()
+}
 push(nodonuevo,p);
 system("pause");
 menu(p);
