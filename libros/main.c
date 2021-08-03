@@ -56,6 +56,8 @@ system("cls");
 printf("Ingrese los datos del libro\n");
 nodo *nodonuevo;
 nodonuevo=Crearnodo();
+autores *autornuevo;
+autornuevo=Crearautores();
 nodonuevo->ptrlibro=&nodonuevo->libro;
 printf("ISBN(Ingrese 9 digitos): ");
 comprobrar_tamano_string(nodonuevo->libro.ISBN,20,9,1);
@@ -71,9 +73,8 @@ printf("Editorial: ");
 comprobrar_tamano_string(nodonuevo->libro.editorial,40,30,6);
 char resp;
 while(resp!='y'){
-    autores *autornuevo;
-    autornuevo=Crearautores();
-    comprobrar_tamano_string()
+    printf("Ingrese el autor o autores\n");
+    comprobrar_tamano_string(,60,50,7);
 }
 push(nodonuevo,p);
 system("pause");
@@ -157,6 +158,15 @@ void comprobrar_tamano_string(char *cadena, int espacio,int max,int tipomensaje)
     case 6:
         if(tamano>max){
             printf("Error La Editorial debe tener menos de %d caracteres\nIntente de nuevo: ",max-1);
+            break;
+
+        }else{
+            verificado=1;
+            break;
+        }
+    case 7:
+        if(tamano>max){
+            printf("Error El autor debe tener menos de %d caracteres\nIntente de nuevo: ",max-1);
             break;
 
         }else{
