@@ -69,6 +69,9 @@ printf("Year: ");
 comprobrar_tamano_string(nodonuevo->libro.year,10,4,5);
 printf("Editorial: ");
 comprobrar_tamano_string(nodonuevo->libro.editorial,40,30,6);
+nodonuevo->libro.nodos_autores=Crearautores();
+printf("Ingrese autor o autores:");
+agregar_autores(nodonuevo->libro.nodos_autores);
 push(nodonuevo,p);
 system("pause");
 menu(p);
@@ -159,4 +162,31 @@ void comprobrar_tamano_string(char *cadena, int espacio,int max,int tipomensaje)
         }
     }
     }while(verificado!=1);
+}
+void agregar_autores(autores pa){
+    char resp=NULL;
+    int veri_resp=0;
+    do{
+        autores *autor_actual=Crearautores;
+        printf("Ingrese Autor: ");
+        fflush(stdin);
+        fgets(autor_actual->autor,60,stdin);
+        strtok(autor_actual->autor,"\n");
+        pa->autor=autor_actual->autor;
+        printf("Desea ingresar otro autor (y/n)");
+        scanf("%c",&resp);
+        do{
+            if(resp=='y'){
+                break;
+            }else if(resp=='n'){
+                break;
+                veri_resp=1;
+            }else{
+                printf("Respuesta no valida");
+                system("pause");
+            }
+        }while(1);
+    }while(veri_resp!=1);
+
+
 }
