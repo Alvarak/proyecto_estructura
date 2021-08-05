@@ -4,7 +4,10 @@
 
 typedef nodo *listasimple;
 
+typedef nodoautor *listaautores;
 listasimple Crear_listasimple();
+
+
 
 void Insertanodo_listasimple(listasimple lista,nodo *nuevo);
 

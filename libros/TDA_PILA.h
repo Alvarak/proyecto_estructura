@@ -3,6 +3,8 @@
 #include "Listasimple.h"
 typedef listasimple pila_tda;
 
+typedef listaautores pila_autores;
+
 void elimina_pila(pila_tda p);
 
 void push (nodo*n ,pila_tda p);

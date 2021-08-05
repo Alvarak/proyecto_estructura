@@ -15,9 +15,9 @@ void eliminarnodo(nodo*n){
     }
 }
 
-autores * Crearautores(){
-    autores*char_autores;
-    char_autores= (autores*)malloc(sizeof(autores));
-    char_autores->siguiente=NULL;
-    return char_autores;
+nodoautor * Crearautor(){
+    nodoautor*nuevoautor;
+    nuevoautor= (nodoautor*)malloc(sizeof(nodoautor));
+    nuevoautor->siguiente=NULL;
+    return nuevoautor;
 }

@@ -163,7 +163,7 @@ void comprobrar_tamano_string(char *cadena, int espacio,int max,int tipomensaje)
     }
     }while(verificado!=1);
 }
-void agregar_autores(autores pa){
+void agregar_autores(autores *pa){
     char resp=NULL;
     int veri_resp=0;
     do{
