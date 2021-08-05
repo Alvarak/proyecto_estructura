@@ -69,15 +69,18 @@ printf("Year: ");
 comprobrar_tamano_string(nodonuevo->libro.year,10,4,5);
 printf("Editorial: ");
 comprobrar_tamano_string(nodonuevo->libro.editorial,40,30,6);
-nodonuevo->libro.nodos_autores=Crearautores();
+pila_autores autores;
+autores = Crearautor();
+nodonuevo->libro.nodo_autor=autores;
 printf("Ingrese autor o autores:");
-agregar_autores(nodonuevo->libro.nodos_autores);
+autores = agregar_autores(autores);
 push(nodonuevo,p);
 system("pause");
 menu(p);
 }
 void imprimir_libro(nodo *n){
-printf("%s   %s   %s   %s   %s   %s\n",n->libro.ISBN,n->libro.titulo,n->libro.edicion,n->libro.idioma,n->libro.year,n->libro.editorial);
+printf("%s   %s   %s    %s   %s   %s   ",n->libro.ISBN,n->libro.titulo,n->libro.edicion,n->libro.idioma,n->libro.year,n->libro.editorial);
+printf("%s",n->libro.nodo_autor->autor);
 /*printf("%s\n",n->libro.titulo);
 printf("%s\n",n->libro.edicion);
 printf("%s\n",n->libro.idioma);
@@ -163,30 +166,38 @@ void comprobrar_tamano_string(char *cadena, int espacio,int max,int tipomensaje)
     }
     }while(verificado!=1);
 }
-void agregar_autores(autores *pa){
+void agregar_autores(pila_autores autores){
     char resp=NULL;
     int veri_resp=0;
-    do{
-        autores *autor_actual=Crearautores;
+
+        nodoautor *autor_actual=Crearautor();
         printf("Ingrese Autor: ");
         fflush(stdin);
         fgets(autor_actual->autor,60,stdin);
         strtok(autor_actual->autor,"\n");
-        pa->autor=autor_actual->autor;
+        autores=autor_actual;
         printf("Desea ingresar otro autor (y/n)");
         scanf("%c",&resp);
+        while(veri_resp!=1){
         do{
             if(resp=='y'){
+        nodoautor *autor_actual=Crearautor();
+        printf("Ingrese Autor: ");
+        fflush(stdin);
+        fgets(autor_actual->autor,60,stdin);
+        strtok(autor_actual->autor,"\n");
+        =autor_actual;
+        printf("Desea ingresar otro autor (y/n)");
+        scanf("%c",&resp);
                 break;
             }else if(resp=='n'){
-                break;
                 veri_resp=1;
+                break;
             }else{
                 printf("Respuesta no valida");
                 system("pause");
             }
+
         }while(1);
-    }while(veri_resp!=1);
-
-
+    }
 }
