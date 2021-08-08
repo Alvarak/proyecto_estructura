@@ -29,12 +29,12 @@
 	"Listasimple.h"
 	<stdlib.h>
 
-1628459865 d:\proyecto_estructura\libros\listasimple.h
+1628466344 d:\proyecto_estructura\libros\listasimple.h
 	"Nodo.h"
 
-1628459788 d:\proyecto_estructura\libros\nodo.h
+1628466344 d:\proyecto_estructura\libros\nodo.h
 
-1628459865 source:d:\proyecto_estructura\libros\nodo.c
+1628466344 source:d:\proyecto_estructura\libros\nodo.c
 	"Nodo.h"
 	<stdlib.h>
 
@@ -42,10 +42,10 @@
 	<stdio.h>
 	"TDA_PILA.h"
 
-1628459869 d:\proyecto_estructura\libros\tda_pila.h
+1628466344 d:\proyecto_estructura\libros\tda_pila.h
 	"Listasimple.h"
 
-1628464228 source:d:\proyecto_estructura\libros\main.c
+1628466344 source:d:\proyecto_estructura\libros\main.c
 	<stdio.h>
 	<stdlib.h>
 	"TDA_PILA.h"

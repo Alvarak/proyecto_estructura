@@ -79,13 +79,20 @@ menu(p);
 void imprimir_libro(nodo *n){
 nodoautor *tempautores;
 tempautores=n->libro.autores;
-printf("%s   %s   %s    %s   %s   %s   ",n->libro.ISBN,n->libro.titulo,n->libro.edicion,n->libro.idioma,n->libro.year,n->libro.editorial);
+printf("-ISBN: %s\n",n->libro.ISBN);
+printf("-Titulo: %s\n",n->libro.titulo);
+printf("-Edicion: %s\n",n->libro.edicion);
+printf("-Idioma: %s\n",n->libro.idioma);
+printf("-Year: %s\n",n->libro.year);
+printf("-Editorial: %s\n",n->libro.editorial);
+printf("-Autores:\n");
+printf("    Nombres y Apellidos:\n");
 do{
 if(tempautores->siguiente==NULL){
-    printf("%s\n",tempautores->autor);
+    printf("    %s\n",tempautores->autor);
     break;
 }else{
-    printf("%s, ",tempautores->autor);
+    printf("    %s\n",tempautores->autor);
     tempautores=tempautores->siguiente;
 }
 }while(tempautores!=NULL);
@@ -107,8 +114,8 @@ if(p->ptrlibro==NULL){
         imprimir_libro(temp);
         temp=temp->siguiente;
     }while(temp!=NULL);
+    printf("\n");
 }
-printf("\n");
 }
 void comprobrar_tamano_string(char *cadena, int espacio,int max,int tipomensaje){
     int verificado=0;
