@@ -69,18 +69,26 @@ printf("Year: ");
 comprobrar_tamano_string(nodonuevo->libro.year,10,4,5);
 printf("Editorial: ");
 comprobrar_tamano_string(nodonuevo->libro.editorial,40,30,6);
-pila_autores autores;
-autores = Crearautor();
-nodonuevo->libro.nodo_autor=autores;
-printf("Ingrese autor o autores:");
-autores = agregar_autores(autores);
+nodonuevo->libro.autores = Crearautor();
+printf("Ingrese autor o autores\n");
+agregar_autores(nodonuevo->libro.autores);
 push(nodonuevo,p);
 system("pause");
 menu(p);
 }
 void imprimir_libro(nodo *n){
+nodoautor *tempautores;
+tempautores=n->libro.autores;
 printf("%s   %s   %s    %s   %s   %s   ",n->libro.ISBN,n->libro.titulo,n->libro.edicion,n->libro.idioma,n->libro.year,n->libro.editorial);
-printf("%s",n->libro.nodo_autor->autor);
+do{
+if(tempautores->siguiente==NULL){
+    printf("%s\n",tempautores->autor);
+    break;
+}else{
+    printf("%s, ",tempautores->autor);
+    tempautores=tempautores->siguiente;
+}
+}while(tempautores!=NULL);
 /*printf("%s\n",n->libro.titulo);
 printf("%s\n",n->libro.edicion);
 printf("%s\n",n->libro.idioma);
@@ -100,6 +108,7 @@ if(p->ptrlibro==NULL){
         temp=temp->siguiente;
     }while(temp!=NULL);
 }
+printf("\n");
 }
 void comprobrar_tamano_string(char *cadena, int espacio,int max,int tipomensaje){
     int verificado=0;
@@ -112,7 +121,7 @@ void comprobrar_tamano_string(char *cadena, int espacio,int max,int tipomensaje)
     switch(tipomensaje){
     case 1:
         if(tamano!=max){
-            printf("Error El ISBN debe tener %d digitos\nIntente de nuevo: ",max-1);
+            printf("Error El ISBN debe tener %d digitos\nIntente de nuevo: ",max);
             break;
 
         }else{
@@ -166,38 +175,49 @@ void comprobrar_tamano_string(char *cadena, int espacio,int max,int tipomensaje)
     }
     }while(verificado!=1);
 }
-void agregar_autores(pila_autores autores){
+void agregar_autores(nodoautor *autores){
     char resp=NULL;
     int veri_resp=0;
-
-        nodoautor *autor_actual=Crearautor();
-        printf("Ingrese Autor: ");
-        fflush(stdin);
-        fgets(autor_actual->autor,60,stdin);
-        strtok(autor_actual->autor,"\n");
-        autores=autor_actual;
-        printf("Desea ingresar otro autor (y/n)");
+    int contador=0;
+    nodoautor *autor_actual=NULL;
+    printf("Ingrese Autor: ");
+    fflush(stdin);
+    fgets(autores->autor,60,stdin);
+    strtok(autores->autor,"\n");
+    while(veri_resp!=1){
+    do{
+        printf("Desea ingresar otro autor (y/n): ");
         scanf("%c",&resp);
-        while(veri_resp!=1){
-        do{
-            if(resp=='y'){
-        nodoautor *autor_actual=Crearautor();
-        printf("Ingrese Autor: ");
-        fflush(stdin);
-        fgets(autor_actual->autor,60,stdin);
-        strtok(autor_actual->autor,"\n");
-        =autor_actual;
-        printf("Desea ingresar otro autor (y/n)");
-        scanf("%c",&resp);
-                break;
-            }else if(resp=='n'){
-                veri_resp=1;
-                break;
-            }else{
-                printf("Respuesta no valida");
-                system("pause");
+        if(resp=='y'){
+            nodoautor *nuevoautor=Crearautor();
+            autor_actual=(nodoautor*)autores;
+            printf("Ingrese Autor: ");
+            fflush(stdin);
+            fgets(nuevoautor->autor,60,stdin);
+            strtok(nuevoautor->autor,"\n");
+            while(autor_actual->siguiente !=NULL){
+                contador++;
+                autor_actual=autor_actual->siguiente;
             }
+            if(contador==0 && autor_actual->siguiente==NULL)//Primer elemento de la lista
+            {
+                autores->siguiente=nuevoautor;
+                //L->libro=nuevo->libro;
+                //L->siguiente=nuevo->siguiente;
 
-        }while(1);
+            }else{
+                autor_actual->siguiente=nuevoautor;
+                nuevoautor->siguiente=NULL;
+            }
+        }else if(resp=='n'){
+            veri_resp=1;
+            break;
+        }else{
+            printf("Respuesta no valida\n");
+            fflush(stdin);
+            break;
+        }
+
+    }while(1);
     }
 }

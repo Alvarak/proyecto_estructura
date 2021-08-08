@@ -6,6 +6,7 @@ nodo * Crearnodo(){
     nuevo= (nodo*)malloc(sizeof(nodo));
     nuevo->ptrlibro=NULL;
     nuevo->siguiente=NULL;
+    nuevo->libro.autores=NULL;
     return nuevo;
 }
 

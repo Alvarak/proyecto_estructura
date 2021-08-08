@@ -7,7 +7,7 @@ struct Libro{
     char idioma[20];
     char year[20];
     char editorial[30];
-    struct nodo_tda_autor *nodo_autor;
+    struct nodo_tda_autor *autores;
 };
 struct nodo_tda{
     struct Libro libro;
