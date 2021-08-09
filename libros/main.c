@@ -21,11 +21,10 @@ void menu(pila_tda p)
   do{
 
     printf("Tienda de Libros\n\n");
-    verificaciones(p);
     printf("---Menu--- \n\nSeleccione una opcion\n");
     printf("1: Agregar libro\n");
-    printf("2: ------------\n");
-    printf("3: Salir\n");
+    printf("2: Buscar libro por ISBN\n");
+    printf("3: Mostrar libros\n");
     printf("Su opcion es: ");
     fflush(stdin);
     fgets(temp,10,stdin);
@@ -38,7 +37,7 @@ void menu(pila_tda p)
       break;
     }
     else if(opcion_menu==3){
-      printf("Escogio salir\n");
+      verificaciones(p);
       break;
     }
     else
@@ -108,14 +107,20 @@ int cont=0;
 pila_tda temp;
 temp=p;
 if(p->ptrlibro==NULL){
+    system("cls");
     printf("No hay libros en este momento\n\n");
+    system("pause");
 }else{
+    system("cls");
     do{
         imprimir_libro(temp);
         temp=temp->siguiente;
     }while(temp!=NULL);
     printf("\n");
+    system("pause");
+
 }
+menu(p);
 }
 void comprobrar_tamano_string(char *cadena, int espacio,int max,int tipomensaje){
     int verificado=0;
