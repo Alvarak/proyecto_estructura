@@ -32,7 +32,7 @@
 1628466344 d:\proyecto_estructura\libros\listasimple.h
 	"Nodo.h"
 
-1628466344 d:\proyecto_estructura\libros\nodo.h
+1628471091 d:\proyecto_estructura\libros\nodo.h
 
 1628466344 source:d:\proyecto_estructura\libros\nodo.c
 	"Nodo.h"
@@ -45,7 +45,7 @@
 1628466344 d:\proyecto_estructura\libros\tda_pila.h
 	"Listasimple.h"
 
-1628466344 source:d:\proyecto_estructura\libros\main.c
+1628474112 source:d:\proyecto_estructura\libros\main.c
 	<stdio.h>
 	<stdlib.h>
 	"TDA_PILA.h"

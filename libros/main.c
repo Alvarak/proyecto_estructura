@@ -24,7 +24,9 @@ void menu(pila_tda p)
     printf("---Menu--- \n\nSeleccione una opcion\n");
     printf("1: Agregar libro\n");
     printf("2: Buscar libro por ISBN\n");
-    printf("3: Mostrar libros\n");
+    printf("3: Buscar libro por Titulo\n");
+    printf("4: Buscar libro por Autor\n");
+    printf("5: Mostrar libros\n");
     printf("Su opcion es: ");
     fflush(stdin);
     fgets(temp,10,stdin);
@@ -34,9 +36,18 @@ void menu(pila_tda p)
       break;
     }
     else if(opcion_menu==2){
+      buscar_isbn(p);
       break;
     }
     else if(opcion_menu==3){
+      buscar_titulo(p);
+      break;
+    }
+    else if(opcion_menu==2){
+      buscar_isbn(p);
+      break;
+    }
+    else if(opcion_menu==5){
       verificaciones(p);
       break;
     }
@@ -103,7 +114,6 @@ printf("%s\n",n->libro.editorial);*/
 }
 
 void verificaciones(pila_tda p){
-int cont=0;
 pila_tda temp;
 temp=p;
 if(p->ptrlibro==NULL){
@@ -232,4 +242,52 @@ void agregar_autores(nodoautor *autores){
 
     }while(1);
     }
+}
+void buscar_isbn(pila_tda p){
+system("cls");
+char ISBN[20];
+printf("Ingrese el ISBN del libro: ");
+fflush(stdin);
+fgets(ISBN,10,stdin);
+strtok(ISBN,"\n");
+pila_tda temp;
+temp=p;
+int iguales=strcmp(ISBN,temp->libro.ISBN);
+do{
+    if(iguales==0){
+    imprimir_libro(temp);
+    break;
+    }else if(temp->siguiente!=NULL){
+        temp=temp->siguiente;
+    }else{
+        printf("No se ha encontrado el libro\n");
+        break;
+    }
+}while(temp!=NULL);
+system("pause");
+menu(p);
+}
+void buscar_titulo(pila_tda p){
+system("cls");
+char titulo[50];
+printf("Ingrese el Titulo del libro: ");
+fflush(stdin);
+fgets(titulo,60,stdin);
+strtok(titulo,"\n");
+pila_tda temp;
+temp=p;
+int iguales=strcmpi(titulo,temp->libro.titulo);
+do{
+    if(iguales==0){
+    imprimir_libro(temp);
+    break;
+    }else if(temp->siguiente!=NULL){
+        temp=temp->siguiente;
+    }else{
+        printf("No se ha encontrado el libro\n");
+        break;
+    }
+}while(temp!=NULL);
+system("pause");
+menu(p);
 }
